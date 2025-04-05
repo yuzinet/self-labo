@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: '表示メッセージ'
+        required: true
+        default: 'こんにちは！'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 入力を表示
+        run: echo "${{ github.event.inputs.message }}"
